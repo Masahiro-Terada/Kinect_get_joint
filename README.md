@@ -33,7 +33,7 @@ Kinectから得られるjsonファイルから特定の関節座標を抜き出�
 example:
 ```python
 from jointgetter.io import KinectJson2CSV
-j2c = KinectJson2CSV
+j2c = KinectJson2CSV()
 j2c(name, in_dir,out_dir)
 
 # name:input file
