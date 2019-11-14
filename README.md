@@ -1,24 +1,42 @@
 # Kinect_get_joint
 Kinectの関節座標取得によって得られるjsonファイルから特定の関節座標を時系列順に抜き出し、csvとして出力する。
 
-## 必要ライブラリ
-・Numpy 1.17.3 <br>
-・Pandas 0.25.2 <br>
-・matplotlib 3.0.2
+## Installation
+clone this repository and
 
-## 使用方法
+```shell script
+cd Kinect_get_joint
+pip install .
+```
 
-## json_to_csv()
-## Kinectから得られるjsonファイルから特定の関節座標を抜き出し、CSVファイルとして出力する
+or 
 
-example: <br>
-jtc=json_to_csv() <br>
-jtc.csv = (name, in_dir,out_dir)
+Build Dockerfile
+```shell script
+cd Kinect_get_joint
+docker build -t jointgetter .
 
-name:input file <br>
-in_dir:directory with input file(option) <br>
-設定しない場合はカレントディレクトリから読み取る <br>
-out_dir:directory to save output file(option) <br> 
-設定しない場合はカレントディレクトリに保存する
+docker run -it jointgetter -v ホストのin_dir:/anaconda/workspace
+```
 
+## Requirements
+* Numpy == 1.17.3
+* Pandas == 0.25.2
+* matplotlib == 3.0.2
 
+## Usage
+
+`jointgetter.io.KinectJson2CSV`
+
+Kinectから得られるjsonファイルから特定の関節座標を抜き出し、CSVファイルとして出力する
+
+example:
+```python
+from jointgetter.io import KinectJson2CSV
+j2c = KinectJson2CSV
+j2c(name, in_dir,out_dir)
+
+# name:input file
+# in_dir:directory with input file(option)
+# out_dir:directory to save output file(option)
+```
