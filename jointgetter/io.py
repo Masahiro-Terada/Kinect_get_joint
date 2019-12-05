@@ -41,18 +41,18 @@ class KinectJson2CSV(object):
         self.name = name
         self.df = pd.read_json(os.path.join(in_dir, name), lines=True)
 
-    def organize(self,joints : list) -> None:
+    def organize(self, joints : list) -> None:
         """
         読み込んだJSONファイルを整理します。
 
         args:
             joints: 取得したい関節の指定。　list
             Examples::['base','hir','kr','ar','shr']
-'           'base':'SpineBase', 'mid':'SpineMid', 'neck':'Neck','head':'Head','shl':'ShoulderLeft','ell':'ElbowLeft',
+'           {'base':'SpineBase', 'mid':'SpineMid', 'neck':'Neck','head':'Head','shl':'ShoulderLeft','ell':'ElbowLeft',
             'wl':'WristLeft','hal':'HandLeft', 'shr':'ShoulderRight','elr':'ElbowRight','wr':'Wristright',
             'har':'HandRight','hil':'HipLeft','kl':'KneeLeft','al':'AnkleLeft','fl':'FootLeft','hir':'HipRight',
             'kr':'KneeRight','ar':'AnkleRight','fr':'FootRight','ssh':'SpineShoulder','htl':'HandTipLeft',
-            'tl':'ThumbLeft','htr':'HandTipRight','tr':'ThumbRight','time':'Time'
+            'tl':'ThumbLeft','htr':'HandTipRight','tr':'ThumbRight','time':'Time'}
         """
         cols = []
         for joint in joints:
