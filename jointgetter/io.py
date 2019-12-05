@@ -16,11 +16,11 @@ class KinectJson2CSV(object):
         >>> j2c.clear_buffer()
     """
     def __init__(self):
-        self.joint_dic = {'base':'SpineBase', 'mid':'SpineMid', 'neck':'Neck','head':'Head','shl':'ShoulderLeft','ell':'ElbowLeft',
-                          'wl':'WristLeft','hal':'HandLeft', 'shr':'ShoulderRight','elr':'ElbowRight','wr':'Wristright',
-                          'har':'HandRight','hil':'HipLeft','kl':'KneeLeft','al':'AnkleLeft','fl':'FootLeft','hir':'HipRight',
-                          'kr':'KneeRight','ar':'AnkleRight','fr':'FootRight','ssh':'SpineShoulder','htl':'HandTipLeft',
-                          'tl':'ThumbLeft','htr':'HandTipRight','tr':'ThumbRight'}
+        self.joint_dic = {'base':'SpineBase', 'mid':'SpineMid', 'neck':'Neck','head':'Head', 'shl':'ShoulderLeft', 'ell':'ElbowLeft',
+                          'wl':'WristLeft', 'hal':'HandLeft', 'shr':'ShoulderRight', 'elr':'ElbowRight', 'wr':'Wristright',
+                          'har':'HandRight', 'hil':'HipLeft', 'kl':'KneeLeft', 'al':'AnkleLeft', 'fl':'FootLeft', 'hir':'HipRight',
+                          'kr':'KneeRight', 'ar':'AnkleRight', 'fr':'FootRight', 'ssh':'SpineShoulder', 'htl':'HandTipLeft',
+                          'tl':'ThumbLeft', 'htr':'HandTipRight', 'tr':'ThumbRight'}
         self.out_df = None
         self.name = None
         self.df = None
@@ -48,11 +48,11 @@ class KinectJson2CSV(object):
         args:
             joints: 取得したい関節の指定。　list
             Examples::['base','hir','kr','ar','shr']
-'           {'base':'SpineBase', 'mid':'SpineMid', 'neck':'Neck','head':'Head','shl':'ShoulderLeft','ell':'ElbowLeft',
-            'wl':'WristLeft','hal':'HandLeft', 'shr':'ShoulderRight','elr':'ElbowRight','wr':'Wristright',
-            'har':'HandRight','hil':'HipLeft','kl':'KneeLeft','al':'AnkleLeft','fl':'FootLeft','hir':'HipRight',
-            'kr':'KneeRight','ar':'AnkleRight','fr':'FootRight','ssh':'SpineShoulder','htl':'HandTipLeft',
-            'tl':'ThumbLeft','htr':'HandTipRight','tr':'ThumbRight'}
+'           {'base':'SpineBase', 'mid':'SpineMid', 'neck':'Neck','head':'Head', 'shl':'ShoulderLeft', 'ell':'ElbowLeft',
+              'wl':'WristLeft', 'hal':'HandLeft', 'shr':'ShoulderRight', 'elr':'ElbowRight', 'wr':'Wristright',
+              'har':'HandRight', 'hil':'HipLeft', 'kl':'KneeLeft', 'al':'AnkleLeft', 'fl':'FootLeft', 'hir':'HipRight',
+              'kr':'KneeRight', 'ar':'AnkleRight', 'fr':'FootRight', 'ssh':'SpineShoulder', 'htl':'HandTipLeft',
+              'tl':'ThumbLeft', 'htr':'HandTipRight', 'tr':'ThumbRight'}
             time: 時間を取得するかどうか　　bool
         """
         cols = []
