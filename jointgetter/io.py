@@ -20,7 +20,7 @@ class KinectJson2CSV(object):
                           'wl':'WristLeft','hal':'HandLeft', 'shr':'ShoulderRight','elr':'ElbowRight','wr':'Wristright',
                           'har':'HandRight','hil':'HipLeft','kl':'KneeLeft','al':'AnkleLeft','fl':'FootLeft','hir':'HipRight',
                           'kr':'KneeRight','ar':'AnkleRight','fr':'FootRight','ssh':'SpineShoulder','htl':'HandTipLeft',
-                          'tl':'ThumbLeft','htr':'HandTipRight','tr':'ThumbRight','time':'Time'}
+                          'tl':'ThumbLeft','htr':'HandTipRight','tr':'ThumbRight'}
         self.out_df = None
         self.name = None
         self.df = None
@@ -41,7 +41,7 @@ class KinectJson2CSV(object):
         self.name = name
         self.df = pd.read_json(os.path.join(in_dir, name), lines=True)
 
-    def organize(self, joints : list) -> None:
+    def organize(self, joints : list, time : bool = False) -> None:
         """
         読み込んだJSONファイルを整理します。
 
@@ -52,7 +52,8 @@ class KinectJson2CSV(object):
             'wl':'WristLeft','hal':'HandLeft', 'shr':'ShoulderRight','elr':'ElbowRight','wr':'Wristright',
             'har':'HandRight','hil':'HipLeft','kl':'KneeLeft','al':'AnkleLeft','fl':'FootLeft','hir':'HipRight',
             'kr':'KneeRight','ar':'AnkleRight','fr':'FootRight','ssh':'SpineShoulder','htl':'HandTipLeft',
-            'tl':'ThumbLeft','htr':'HandTipRight','tr':'ThumbRight','time':'Time'}
+            'tl':'ThumbLeft','htr':'HandTipRight','tr':'ThumbRight'}
+            time: 時間を取得するかどうか　　bool
         """
         cols = []
         for joint in joints:
@@ -71,8 +72,8 @@ class KinectJson2CSV(object):
 
             df_cache = pd.Series(positions,index=self.out_df.columns)
             self.out_df = self.out_df.append(df_cache,ignore_index=True)
-
-        self.out_df = self.out_df.assign(time=self.df.iloc[:, 16])
+        if time:
+            self.out_df = self.out_df.assign(time=self.df.iloc[:, 16])
 
     def clear_buffer(self):
         """
