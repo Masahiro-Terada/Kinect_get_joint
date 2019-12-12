@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/fd437d457e3349e887f115c6949adc86)](https://www.codacy.com/manual/Masahiro-Terada/Kinect_get_joint?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=Masahiro-Terada/Kinect_get_joint&amp;utm_campaign=Badge_Grade)
 # Kinect_get_joint
 Kinectの関節座標取得によって得られるjsonファイルから特定の関節座標を時系列順に抜き出し、csvとして出力する。  
 また、得られたCSVファイルから時系列のトレンドグラフを画像ファイルとして出力する。
