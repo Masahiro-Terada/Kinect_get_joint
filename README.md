@@ -46,7 +46,7 @@ j2c(name, in_dir,out_dir)
 得られたCSVファイルから特定の複数関節の関節座標を時系列のトレンドグラフとして画像出力する
 
 example:
-'''python
+```python
 from jointgetter.io import Csv2graph
 c2g = Csv2graph()
 ctg.load_csv(name+'.csv', in_dir)
@@ -57,4 +57,4 @@ ctg.to_image(out_dir)
 # in_dir:directory with input file(option)
 # columns:Specifying joint to graph (based on X axis)
 # out_dir:directory to save output file(option)
-'''
+```
