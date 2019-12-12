@@ -21,9 +21,9 @@ docker run -it jointgetter -v ホストのin_dir:/anaconda/workspace
 ```
 
 ## Requirements
-
-  * Pandas == 0.25.2
-  * matplotlib == 3.0.2
+  
+* Pandas == 0.25.2  
+* matplotlib == 3.0.2  
 
 ## Usage
 
