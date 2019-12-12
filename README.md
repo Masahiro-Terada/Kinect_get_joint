@@ -60,3 +60,5 @@ ctg.to_image(out_dir)
 # columns:Specifying joint to graph (based on X axis)
 # out_dir:directory to save output file(option)
 ```
+## License
+MIT
