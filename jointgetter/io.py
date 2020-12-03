@@ -16,7 +16,7 @@ class KinectJson2CSV(object):
     """
     def __init__(self):
         self.joint_dic = {'base':'SpineBase', 'mid':'SpineMid', 'neck':'Neck','head':'Head', 'shl':'ShoulderLeft', 'ell':'ElbowLeft',
-                          'wl':'WristLeft', 'hal':'HandLeft', 'shr':'ShoulderRight', 'elr':'ElbowRight', 'wr':'Wristright',
+                          'wl':'WristLeft', 'hal':'HandLeft', 'shr':'ShoulderRight', 'elr':'ElbowRight', 'wr':'WristRight',
                           'har':'HandRight', 'hil':'HipLeft', 'kl':'KneeLeft', 'al':'AnkleLeft', 'fl':'FootLeft', 'hir':'HipRight',
                           'kr':'KneeRight', 'ar':'AnkleRight', 'fr':'FootRight', 'ssh':'SpineShoulder', 'htl':'HandTipLeft',
                           'tl':'ThumbLeft', 'htr':'HandTipRight', 'tr':'ThumbRight'}
